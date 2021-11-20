@@ -18,7 +18,9 @@ class Station
     @trains
   end
 
-  def show_trains_type; end
+  def show_trains_type
+    @trains.select { |train| train.type == type }
+  end
 
   def remove_train(train)
     @trains.delete(train)
