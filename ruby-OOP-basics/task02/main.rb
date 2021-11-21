@@ -211,8 +211,6 @@ class Main
     end
   end
 
-  private
-
   def context
     puts '1 Create station'
     puts '2 Create train'
@@ -220,7 +218,7 @@ class Main
     puts '4 Add station in route'
     puts '5 Delete station from route'
     puts '6 Set route to train'
-    puts '7 Attach wagon to route'
+    puts '7 Attach wagon to train'
     puts '8 Deattach wagon from route'
     puts '9 Train move forward'
     puts '10 Train move backward'

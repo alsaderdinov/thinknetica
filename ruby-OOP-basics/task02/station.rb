@@ -20,6 +20,7 @@ class Station
 
   def show_by_type(type)
     @trains.select { |train| train.type == type }
+  end
 
   def remove_train(train)
     @trains.delete(train)
