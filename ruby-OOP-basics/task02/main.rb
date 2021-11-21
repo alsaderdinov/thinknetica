@@ -51,6 +51,8 @@ class Main
     end
   end
 
+  private
+
   def station_create
     puts 'Enter station name'
     name = gets.chomp

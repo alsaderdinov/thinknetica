@@ -31,7 +31,7 @@ class Train
   end
 
   def attach_wagon(wagon)
-    @wagons << wagon if train_stopped?
+    @wagons << wagon if train_stopped? && type_match?(wagon)
   end
 
   def deattach_wagon
@@ -68,6 +68,8 @@ class Train
     @station_index -= 1
   end
 
+  # These are validation and readability-enhancing methods.
+  # The user does not need to interact with them directly.
   protected
 
   def max_speed?
@@ -76,6 +78,10 @@ class Train
 
   def train_stopped?
     @speed.zero?
+  end
+
+  def type_match?(wagon)
+    @type == wagon.type
   end
 
   def increase_speed!
