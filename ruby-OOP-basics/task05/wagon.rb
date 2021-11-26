@@ -19,8 +19,12 @@ class Wagon
   end
 
   def take_space(value = 1)
-    @occupied_space += value
+    @occupied_space += value if @type == :cargo
     raise 'Space is over' if @occupied_space > @space
+  end
+
+  def take_seat(value = 1)
+    @occupied_space += value if @type == :passenger
   end
 
   def free_space

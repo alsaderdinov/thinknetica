@@ -225,7 +225,7 @@ class Main
     wagon = gets.to_i
     if @trains[train].wagons[wagon].type == :passenger
       puts 'Volume'
-      @trains[train].wagons[wagon].take_space(gets.to_i)
+      @trains[train].wagons[wagon].take_seat(gets.to_i)
       puts 'Wagon was loade'
       puts "Free volume: #{@trains[train].wagons[wagon].free_space}"
     else
