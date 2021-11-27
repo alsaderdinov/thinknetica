@@ -18,14 +18,14 @@ class Wagon
     false
   end
 
-  def take_space(value = 1)
-    @occupied_space += value if @type == :cargo
+  def take_seat(value = 1)
+    @occupied_space += value if @type.eql?(:passenger)
     raise 'Volume is over' if @occupied_space > @space
   end
 
-  def take_seat(value = 1)
-    @occupied_space += value if @type == :passenger
-    raise 'Seats is over' if @occupied_space > @space
+  def take_volume(value = 1)
+    @occupied_space += value if @type.eql?(:cargo)
+    raise 'Volume is over' if @occupied_space > @space
   end
 
   def free_space

@@ -223,14 +223,14 @@ class Main
     train = gets.to_i
     puts 'Select the wagon'
     wagon = gets.to_i
-    if @trains[train].wagons[wagon].type == :passenger
+    if @trains[train].wagons[wagon].type == :cargo
       puts 'Volume'
-      @trains[train].wagons[wagon].take_seat(gets.to_i)
-      puts 'Wagon was loade'
+      @trains[train].wagons[wagon].take_volume(gets.to_i)
+      puts 'Wagon was loaded'
       puts "Free volume: #{@trains[train].wagons[wagon].free_space}"
     else
       puts 'Seats'
-      @trains[train].wagons[wagon].take_space(gets.to_i)
+      @trains[train].wagons[wagon].take_seat(gets.to_i)
       puts 'Seat is taken'
       puts "Free seats: #{@trains[train].wagons[wagon].free_space}"
     end
